@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Animation</title>
+  </head>
+  <body>
+    <div class="background">
+      <div class="white"></div>
+      <div class="cyan"></div>
+      <div class="purple"></div>
+      <header>
+        <nav>
+          <div class="logo">
+            <img class="logo" src="/images/logo.svg" alt="logo of blabla" />
+          </div>
+          <ul>
+            <li><a href="#">Virtual tour</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Photography</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Issue</a></li>
+          </ul>
+          <div class="search">
+            <img class="search" src="/images/search.svg" alt="search icon" />
+          </div>
+        </nav>
+      </header>
+      <div class="wrapper">
+        <section class="landingpage">
+          <article class="hero">
+            <img src="/images/pic.jpg" alt="elegant woman" class="carousel" />
+            <img src="/images/pic1.jpg" alt="elegant woman" class="carousel1" />
+            <div class="content">
+              <h1 class="title">A new season</h1>
+              <p class="description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Perspiciatis rerum quia modi debitis est aspernatur! Voluptatem
+                dolorum repellendus explicabo veritatis unde doloribus aut
+                tenetur
+              </p>
+            </div>
+            <div class="content1">
+              <h1 class="title">Botanical Garden</h1>
+              <p class="description">
+                Lorem ipsum Ajeje Brazorf consectetur adipisicing elit.
+                Perspiciatis rerum quia modi debitis est aspernatur!
+              </p>
+            </div>
+          </article>
+        </section>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"></script>
+    <script>
+      var timeline = gsap.timeline({ duration: 20, repeat: -1 });
+      timeline
+        .to(".carousel1", { xPercent: 100, duration: 0.5 }, 1.1)
+        .to(".carousel1", { "z-index": 3, duration: 3 }, 1)
+        .to(".carousel1", { "z-index": 0, duration: 3, delay: 2 }, 3)
+
+        .to(".carousel", { xPercent: -100, duration: 0.4 }, 2)
+        .to(".carousel", { "z-index": 3, duration: 3 }, 3)
+        .to(".carousel", { xPercent: 0, duration: 0.4, delay: 4 }, 4)
+        .to(".carousel", { xPercent: 0, duration: 0.4, delay: 4 }, 8)
+
+        .to(".content", { opacity: 0, y: -100, duration: 0.8 }, 1.1)
+        .to(".content", { opacity: 0, y: 200, duration: 0.8 }, 2)
+        .to(".content", { opacity: 1, y: 0, duration: 0.8 }, 7.8)
+
+        .to(".content1", { opacity: 1, y: -70, duration: 0.8 }, 1.6)
+        .to(".content1", { opacity: 0, y: -140, duration: 0.8 }, 7)
+        .to(".content1", { opacity: 0, y: 140, duration: 0.8, delay: 1 }, 7)
+
+        .to(".purple", { yPercent: -100, duration: 0.5 }, 1.4)
+        .to(".purple", { yPercent: -200, duration: 0.5 }, 8);
+
+      // .to(".cyan", { opacity: 0, yPercent: 100, duration: 0.5 }, 1.9);
+    </script>
+  </body>
+</html>
